@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon_io/favicon.svg">
+    <link rel="stylesheet" href="/dist/output.css">
+    <title>Jotform Form ve Anket</title>
+</head>
+<body>
+    <!--Navbar Start-->
+<nav class="bg-white px-2 py-1 fixed w-full z-20 top-0 left-0  ">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+   <div class="flex">
+    <a href="#" class="flex items-center">
+        <img src="./assets/jotform-logo.svg" class="h-5 sm:h-7 sm:w-28" alt="Jotform Logo">
+    </a>
+   </div>
+    <div class="flex md:order-3 md:border-l border-black">
+        <button type="button" class="text-black bg-white hover:text-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-normal rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Giriş</button>
+        <button type="button" class="text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Kaydol</button>
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-900 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none  dark:text-indigo" aria-controls="navbar-sticky" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col py-4 mt-4 sm:border-b sm:border-gray-100 md:flex-row md:space-x-8 sm:space-x-4 md:mt-0 md:border-0 md:bg-white">
+        <li>
+          <a href="#" class="block menu-item py-2 pl-3 pr-4 border-y border-gray-100 text-indigo text-size hover:text-orange-500  md:border-0 md:p-0 dark:border-gray-700">Formlarım</a>
+        </li>
+        <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex menu-item  items-center justify-between w-full py-2 pl-3 pr-4 text-indigo hover:text-orange-500 text-size border-b border-gray-100 md:border-0 md:p-0 md:w-auto dark:border-gray-700">Şablonlarım <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal divide-y divide-gray-100 shadow max-sm:w-11/12 bg-dropdown">
+                <ul class="py-2 text-black text-size" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a
+                     href="#" class="flex menu-item px-4 py-2 hover:text-orange-500 hover:bg-gray-200">
+                     <img class="flex w-6 h-6 mr-2" src="./assets/icon/form.svg" alt="form-icon">
+                     Form Şablonları</a>
+                  </li>
+                  <li>
+                    <a href="#" class="flex menu-item px-4 py-2 hover:text-orange-500 hover:bg-gray-200">
+                    <img class="flex w-6 h-6 mr-2" src="./assets/icon/app.svg" alt="app-icon">    
+                    Uygulama Şablonları</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex menu-item  items-center justify-between w-full py-2 pl-3 pr-4 text-indigo hover:text-orange-500 text-size border-b border-gray-100 md:border-0 md:p-0 md:w-auto dark:border-gray-700">Entegrasyonlar <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block menu-item px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block menu-item  px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex menu-item  items-center justify-between w-full py-2 pl-3 pr-4 text-indigo hover:text-orange-500 text-size border-b border-gray-100 md:border-0 md:p-0 md:w-auto dark:border-gray-700">Ürünler <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block menu-item px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block menu-item  px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex menu-item  items-center justify-between w-full py-2 pl-3 pr-4 text-indigo hover:text-orange-500 text-size border-b border-gray-100 md:border-0 md:p-0 md:w-auto dark:border-gray-700">Destek <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+            <!-- Dropdown menu -->
+            <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block menu-item px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block menu-item  px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                  </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+          <a href="#" class="block menu-item py-2 pl-3 pr-4 border-b border-gray-50 md:border-0 text-indigo hover:text-orange-500 text-size md:p-0 dark:border-gray-700">Kurumsal</a>
+        </li>
+        <li>
+            <a href="#" class="block menu-item py-2 pl-3 pr-4 border-b border-gray-50 md:border-0 text-indigo hover:text-orange-500 text-size md:p-0 dark:border-gray-700">Fiyatlandırma</a>
+          </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+  <!--Navbar End-->
+
+  <!--Start Home Section-->
+  <section class="mt-40">
+    <div class="container flex flex-wrap items-center justify-center mx-auto h-full">
+        <div class="block">
+            <div class="block">
+            <h1 class="title">İş bitiren güçlü formlar</h1>
+            <p class="subtitle">Doğru form kullanımının her şeyi değiştirdiğine inanıyoruz. Koşullu mantığı kullanan, ödemeleri kabul eden, raporlar oluşturan ve iş akışlarını otomatikleştiren güçlü formlarla yoğun işlerden kurtularak iş yükünüzü azaltın.</p>
+            </div>
+            <div class="block">
+               <div class="flex">
+                 <div>
+                    <img class="w-96 hidden sm:block" src="./assets/woman-left.png" alt="">
+                 </div>
+                 <div class="block border-2 border-b-4 rounded-md mt-10 px-8 mx-auto w-auth text-center">
+                  <button type="button" class="flex mt-8 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-orange-300 text-xl rounded-lg mx-auto px-14 py-4 text-center">
+                    <img class="flex w-6 pr-2 pt-2" src="./assets/icon/google.png" alt="">
+                    Google İle Giriş Kaydol</button>
+                  <button type="button" class="flex mt-4 text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-orange-300 text-xl rounded-lg mx-auto px-11 py-4 text-center">
+                    <img class="flex w-6 pr-2 pt-1.5" src="./assets/icon/facebook.png" alt="">
+                    Facebook İle Giriş Kaydol</button>
+                    <div class="my-3"> 
+                        <span>VEYA</span>
+                    </div>
+                  <button type="button" class="block mt-4 text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 text-xl rounded-lg mx-auto px-16 py-4 text-center">Eposta İle Giriş Kaydol</button> 
+                    <div class="my-3">
+                        <span>ÜCRETSİZ!</span>
+                    </div>
+                 </div>
+                 <div>
+                    <img class="w-96 hidden sm:block" src="./assets/woman-right.png" alt="">
+                 </div>
+               </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!--Home Section End-->    
+
+  <!--Start Product Section-->
+  <section class="bg-product mt-10">
+    <div class="">
+        <div class="flex flex-wrap items-center justify-center mx-auto">
+           <div class="flex mt-20 mb-20 mx-auto w-96">
+              <div class="block">
+                <img class="w-96" src="./assets/product-1.png" alt="">
+                <h3 class="text-indigo text-product">İhtiyacınız olan formu dakikalar içinde oluşturun</h3>
+                <p>Jotform'un online Form Oluşturucu'sunu kullanarak kodlama olmadan profesyonel görünümlü formlar oluşturun. Daha sonra formlarınızı kendi logonuz, yazı tipleriniz ve renklerinizle stillendirin.</p>
+              </div>
+           </div>
+           <div class="flex mt-24 mb-20 mx-auto w-96">
+            <div class="block">
+              <img class="w-96" src="./assets/product-2.png" alt="">
+              <h3 class="text-indigo text-product">Formlarınızı iş uygulamalarınızla entegre edin</h3>
+              <p>Jotform'un 150'den fazla entegrasyonuyla form gönderimlerini e-posta pazarlama hizmetlerine, proje yönetim panolarına, C RM'lere, bulut depolama uygulamalarına ve daha fazlasına otomatik olarak gönderin.</p>
+            </div>
+         </div>
+         <div class="flex mt-12 mb-20 mx-auto w-96">
+            <div class="block">
+              <img class="w-96" src="./assets/product-3.png" alt="">
+              <h3 class="text-indigo text-product">Zahmetsizce online ödemeler alın</h3>
+              <p>İster bir ürün satıyor olun veya bir ücret ya da bağış topluyor olun, Jotform formunuz aracılığıyla doğrudan ödeme almanıza olanak sağlar.</p>
+            </div>
+         </div>
+        </div>
+    </div>
+  </section>
+  <!--Product Section End-->
+
+  <!--Start Auth Section-->
+  <section class="bg-auth">
+   <div class="flex flex-wrap items-center justify-center mx-auto">
+    <div class="block mt-20">
+        <div class="block text-center">
+            <h2 class="auth-title">Başlamaya Hazır mısın?</h2>
+            <p class="auth-text">İlk formunuzu oluşturun ve tüm dünyada 15 milyon kullanıcının neden Jotform'a güvendiğine tanık olun.</p>
+          </div>
+          <div class="block">
+              <div class="block mb-20">
+                  <div class="block border-2 bg-white border-b-4 rounded-md mt-10 px-8 mx-auto w-auth text-center">
+                   <button type="button" class="flex mt-8 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-orange-300 text-xl rounded-lg mx-auto px-14 py-4 text-center">
+                     <img class="flex w-6 pr-2 pt-2" src="./assets/icon/google.png" alt="">
+                     Google İle Giriş Kaydol</button>
+                   <button type="button" class="flex mt-4 text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-orange-300 text-xl rounded-lg mx-auto px-11 py-4 text-center">
+                     <img class="flex w-6 pr-2 pt-1.5" src="./assets/icon/facebook.png" alt="">
+                     Facebook İle Giriş Kaydol</button>
+                     <div class="my-3"> 
+                         <span>VEYA</span>
+                     </div>
+                   <button type="button" class="block mt-4 text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 text-xl rounded-lg mx-auto px-16 py-4 text-center">Eposta İle Giriş Kaydol</button> 
+                     <div class="my-3">
+                         <span>ÜCRETSİZ!</span>
+                     </div>
+                  </div>
+                </div>
+          </div>
+    </div>
+   </div>
+  </section>
+  <!--Auth Section End-->
+
+  <!--Start Footer Menu Section-->
+  <section class="mt-10">
+    <div class="">
+     <div class="flex flex-wrap items-center justify-center mx-auto">
+         <div class="flex mx-auto">
+            <div class="block">
+                <h2 class="flex footer-menu-title">Jotform</h2>
+                <a class="block mt-2 foter-item" href="">Kaydol</a>
+                <a class="block mt-2 foter-item" href="">Form Oluşturun</a>
+                <a class="block mt-2 foter-item" href="">Formlarım</a>
+                <a class="block mt-2 foter-item" href="">Fiyatlandırma</a>
+                <a class="block mt-2 foter-item" href="">Jotform Kurumsal</a>
+                <a class="block mt-2 foter-item" href="">Örnekler</a>
+            </div>
+         </div>
+         <div class="flex mx-auto">
+            <div class="block">
+                <h2 class="flex footer-menu-title">Galeri</h2>
+                <a class="block mt-2 foter-item" href="">Şablonlar</a>
+                <a class="block mt-2 foter-item" href="">Form Temaları</a>
+                <a class="block mt-2 foter-item" href="">Form Widgetları</a>
+                <a class="block mt-2 foter-item" href="">Entegrasyonlar</a>
+                <a class="block mt-2 foter-item" href="">Özellikler</a>
+                <a class="block mt-2 foter-item" href="">Blog</a>
+
+            </div>
+         </div>
+         <div class="flex mx-auto">
+            <div class="block">
+                <h2 class="flex footer-menu-title">Destek</h2>
+                <a class="block mt-2 foter-item" href="">Bize Ulaşın</a>
+                <a class="block mt-2 foter-item" href="">Kullanıcı Klavuzu</a>
+                <a class="block mt-2 foter-item" href="">Yardım</a>
+                <a class="block mt-2 foter-item" href="">Web Seminerleri</a>
+                <a class="block mt-2 foter-item" href="">Kötüye Kullanımı Bildir</a>
+                <a class="block mt-2 foter-item" href="">Telif Hakkı Konusu Bildir</a>
+            </div>
+         </div>
+         <div class="flex mx-auto">
+            <div class="block">
+                <h2 class="flex footer-menu-title">Şirket</h2>
+                <a class="block mt-2 foter-item" href="">Hakkımızda</a>
+                <a class="block mt-2 foter-item" href="">Kariyer</a>
+                <a class="block mt-2 foter-item" href="">Medya Kiti</a>
+                <a class="block mt-2 foter-item" href="">Haberlerde Jotform</a>
+                <a class="block mt-2 foter-item" href="">Bültenler</a>
+                <a class="block mt-2 foter-item" href="">İş Ortakları</a>            </div>
+         </div>
+         <div class="flex mx-auto">
+            <div class="block">
+                <h2 class="flex footer-menu-title">Mobil Uygulamalar</h2>
+                <img class="block mt-2 w-32" src="./assets/icon/google-play.jpg" alt="">
+                <img class="block mt-2 w-32" src="./assets/icon/app-store-.jpg" alt="">
+            </div>
+         </div>
+     </div>
+    </div>
+  </section>
+  <!--Footer Menu Section End-->
+  
+  <!--Start Footer Address Section-->
+  <section class="bg-gray-300 mt-20">
+    <div class="address-container">
+       <div class="address-box mt-10">
+          <div class="logo-address">
+             <div class="logo">
+                <svg class="jff-logo-img" width="53" height="59" viewBox="0 0 53 59" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.4509 55.1332C15.5462 56.1951 14.7721 58.0143 13.2168 58.0143H3.4831C1.56265 58.0143 0 56.4995 0 54.6377V45.2017C0 43.6939 1.87664 42.9436 2.97195 44.0054L14.4509 55.1332Z" fill="#0A1551"></path><path d="M29.6655 55.8676C26.7843 53.0052 26.7843 48.3642 29.6655 45.5018L40.0638 35.1713C42.945 32.3089 47.6164 32.3089 50.4976 35.1713C53.3788 38.0338 53.3788 42.6747 50.4976 45.5371L40.0993 55.8676C37.2181 58.73 32.5468 58.73 29.6655 55.8676Z" fill="#FFB629"></path><path d="M2.1968 29.9101C-0.684414 27.0476 -0.684413 22.4067 2.1968 19.5443L19.696 2.14685C22.5772 -0.71559 27.2486 -0.715594 30.1298 2.14685C33.011 5.00929 33.011 9.65022 30.1298 12.5127L12.6306 29.9101C9.74937 32.7725 5.078 32.7725 2.1968 29.9101Z" fill="#09F"></path><path d="M16.5015 42.3095C13.6203 39.4471 13.6203 34.8062 16.5015 31.9437L40.1461 8.45322C43.0273 5.59079 47.6986 5.59079 50.5798 8.45322C53.4611 11.3157 53.4611 15.9566 50.5798 18.819L26.9353 42.3095C24.0541 45.1719 19.3827 45.1719 16.5015 42.3095Z" fill="#FF6100"></path></svg>
+             </div>
+              </div>
+            <div class="footer-col">
+                <div class="address-group">
+                   <address class="mobile-left">
+                    <i class="map-icon"><svg aria-label="location pointer icon" width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2 0 0 3 0 6C0 9 6 16 6 16C6 16 12 9 12 6C12 3 10 0 6 0ZM6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6C8 7.10457 7.10457 8 6 8Z" fill="black"></path></svg></i>
+                    <a class="footer-link" href="https://www.jotform.com/tr/about/ankara/" target="_blank" title="Jotform Ankara Office"><strong>Ankara</strong></a> 
+                    "Jotform Yazılım A.Ş. Üniversiteler Mah. Hacettepe Teknokent Yerleşkesi 6. ArGe C Blok No:62, Çankaya, Ankara"
+                </address> 
+                <address class="mobile-left"><i class="map-icon"><svg aria-label="location pointer icon" width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2 0 0 3 0 6C0 9 6 16 6 16C6 16 12 9 12 6C12 3 10 0 6 0ZM6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6C8 7.10457 7.10457 8 6 8Z" fill="black"></path></svg></i><a href="https://www.jotform.com/tr/about/izmir/" target="_blank" title="Jotform Izmir Office"><strong>İzmir</strong></a>Jotform Yazılım A.Ş. Gülbahçe Mah. İYTE Yerleşkesi Teknopark İzmir A9 Binası No:16, Urla, İzmir</address>
+                <address class="mobile-left"><i class="map-icon"><svg aria-label="location pointer icon" width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2 0 0 3 0 6C0 9 6 16 6 16C6 16 12 9 12 6C12 3 10 0 6 0ZM6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6C8 7.10457 7.10457 8 6 8Z" fill="black"></path></svg></i><a href="https://www.jotform.com/tr/about/istanbul/" target="_blank" title="Jotform Istanbul Office"><strong>İstanbul</strong></a>Jotform Yazılım A.Ş. Ayazağa Mah. Kemerburgaz Cad. Vadistanbul, No:7/A Ofis 20 Kat 6, Sarıyer, İstanbul</address>
+                <address class="mobile-left"><i class="map-icon"><svg aria-label="location pointer icon" width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 0C2 0 0 3 0 6C0 9 6 16 6 16C6 16 12 9 12 6C12 3 10 0 6 0ZM6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6C8 7.10457 7.10457 8 6 8Z" fill="black"></path></svg></i><a href="https://www.jotform.com/about/san-francisco/" target="_blank" title="Jotform San Francisco Office"><strong>San Francisco</strong></a>Jotform Inc. 4 Embarcadero Center, Suite 780, San Francisco CA 94111</address>
+                <p class="footer-job"><i class="job-icon"><svg aria-label="job advert icon" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 8.443V13C15 13.5523 14.5523 14 14 14H2C1.44772 14 1 13.5523 1 13V8.443L6 10.318V11C6 11.5523 6.44772 12 7 12H9C9.55228 12 10 11.5523 10 11V10.318L15 8.443ZM9 10V11H7V10H9ZM10 0C10.5128 0 10.9355 0.38604 10.9933 0.883379L11 1V2H15C15.5523 2 16 2.44772 16 3V6.307C16 6.72384 15.7414 7.09696 15.3511 7.24333L9.75368 9.34273C9.57036 9.1327 9.30068 9 9 9H7C6.69932 9 6.42964 9.1327 6.24632 9.34273L0.648877 7.24333C0.258573 7.09696 0 6.72384 0 6.307V3C0 2.44772 0.447715 2 1 2H5V1C5 0.487164 5.38604 0.0644928 5.88338 0.00672773L6 0H10ZM10 1H6V2H10V1Z" fill="black"></path></svg></i><span>İş ilanlarımıza <a href="https://www.jotform.com/tr/jobs/" target="_blank" role="link">buradan</a> ulaşabilirsiniz.</span>
+                    <i class="job-icon"><svg aria-label="job advert icon" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 8.443V13C15 13.5523 14.5523 14 14 14H2C1.44772 14 1 13.5523 1 13V8.443L6 10.318V11C6 11.5523 6.44772 12 7 12H9C9.55228 12 10 11.5523 10 11V10.318L15 8.443ZM9 10V11H7V10H9ZM10 0C10.5128 0 10.9355 0.38604 10.9933 0.883379L11 1V2H15C15.5523 2 16 2.44772 16 3V6.307C16 6.72384 15.7414 7.09696 15.3511 7.24333L9.75368 9.34273C9.57036 9.1327 9.30068 9 9 9H7C6.69932 9 6.42964 9.1327 6.24632 9.34273L0.648877 7.24333C0.258573 7.09696 0 6.72384 0 6.307V3C0 2.44772 0.447715 2 1 2H5V1C5 0.487164 5.38604 0.0644928 5.88338 0.00672773L6 0H10ZM10 1H6V2H10V1Z" fill="black"></path></svg></i>
+                    <span>İş ilanlarımıza <a href="https://www.jotform.com/tr/jobs/" target="_blank" role="link">buradan</a> ulaşabilirsiniz.</span>
+                </p>
+            </div>
+            <p class="footer-year">© <span id="current-year">2023</span> Jotform Inc. The name "Jotform" and the Jotform logo are registered trademarks of Jotform Inc.</p>
+            </div> 
+          </div>
+          <div class="footer-language mx-auto">
+            <select class="footer-languageList " id="jfFooterLanguage" name="jfFooterLanguage" aria-label="Dil Tercihini Değiştir"><option value="en-US">English</option><option value="es-ES">Español</option><option value="fr-FR">Français</option><option value="it-IT">Italiano</option><option value="pt-PT">Português</option><option value="de-DE">Deutsch</option><option value="tr-TR" selected="">Türkçe</option><option value="nl-NL">Nederlands</option><option value="hu-HU">Magyar</option><option value="fi-FI">Suomi</option><option value="pl-PL">Polski</option><option value="ru-RU">Pусский</option><option value="ja-JP">日本語</option><option value="uk-UA">Український</option><option value="bg-BG">български</option><option value="sr-BA">Српски</option><option value="ka-GE">ქართველი</option><option value="id-ID">Indonesia</option><option value="ar-AR">العربية</option><option value="ko-KR">한국어</option><option value="zh-HK">繁體中文 - Beta</option><option value="af-ZA">Afrikaan - Beta</option><option value="he-IL">Hebrew - Beta</option></select>
+          </div>
+    </div>
+  </section>
+  <!--Footer Address Section End-->
+
+  <!--Start Footer Section-->
+   <section>
+     <div class="footer">
+      <div class="footer-bottom">
+        <ul class="bottom-link justify-center">
+          <li><a class="mx-3 text-indigo inline-flex items-center" href="https://www.jotform.com/hizmet-kosullari/" target="_blank" rel="noopener" data-name="Hizmet Koşulları">Hüküm ve Koşullar</a></li>
+          <li><a class="mx-3 text-indigo inline-flex items-center" href="/gizlilik-politikasi/" target="_blank" rel="noopener" data-name="Privacy Policy" class="">Gizlilik Politikası</a></li>        
+          <li><a class="mx-3 text-indigo inline-flex items-center" href="https://www.jotform.com/tr/security/" target="_blank" rel="noopener" data-name="Security" class="">Güvenlik</a></li>
+          <li><a class="mx-3 text-indigo inline-flex items-center" href="https://www.jotform.com/accessibility-statement/" target="_blank" rel="noopener" data-name="Accessibility Statement" class="">Erişilebilirlik Beyanı</a></li>
+          <li><a class="mx-3 text-indigo inline-flex items-center" href="https://www.jotform.com/kvkk/" target="_blank" data-name="kvkk" class="">KVKK Aydınlatma Metni</a></li>
+        </ul>
+      </div>
+     </div>
+   </section>
+  <!--Footer Section End-->
+  
+
+
+      <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+</body>
+</html>

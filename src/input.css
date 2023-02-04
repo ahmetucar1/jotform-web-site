@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.text-indigo {
+    color: #24356A;
+}
+
+.bg-dropdown {
+    background-color: #f4f4f4;
+}
+
+.text-size {
+    font-size: calc(12px + .3vw)
+}
+
+
+@media screen and (min-width: 769px) { 
+.menu-item {
+    font-size: 12px;
+ }
+}
+
+.title {
+    margin: 0;
+    font-size: 3.770rem;
+    line-height: 4rem;
+    text-align: center;
+    color: #0A1551;
+    font-weight: 700;
+    font-family: Circular,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,oxygen-sans,ubuntu,cantarell,"Helvetica Neue",sans-serif;
+}
+
+.subtitle {
+    margin: 2rem 0 0;
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    color: #545E94;
+    font-weight: 400;
+    text-align: center;
+}
+
+.font-helvetica {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.w-auth {
+    width: 30rem;
+}
+
+.bg-product {
+    background-color: #FCF1E1;
+}
+
+.text-product {
+    margin: 25px 0 18px;
+    font-size: 26px;
+    color: #0A1551;
+    font-weight: 700;
+}
+
+.auth-title {
+    margin: 0;
+    font-size: 2.375rem;
+    line-height: 3.375rem;
+    color: #FFF;
+    font-weight: 700;
+    text-align: center;
+}
+
+.auth-text {
+    margin: 0;
+    font-size: 1.375rem;
+    line-height: 2.125rem;
+    color: #A6ABC6;
+    font-weight: 400;
+    text-align: center;
+}
+
+.bg-auth {
+    background-color: #0C174E;
+}
+
+.footer-menu-title {
+    color: #0c174e;
+    font-size: 18px;
+    margin: 0 0 30px;
+    font-weight: 700;
+    box-sizing: border-box;
+}
+
+.foter-item {
+    padding: 10px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all .3s linear;
+}
+
+.foter-item:hover {
+    color: orange;
+}
+
+.address-container {
+    background-color: #f3f3fe;
+    padding: 23px 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.address-box {
+    align-items: center;
+    max-width: 1275px;
+    padding: 0 30px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: max-width .3s ease;
+}
+
+.logo-address {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: calc(100% - 185%);
+    box-sizing: border-box;
+}
+
+.footer-col {
+    color: #454E80;
+    padding-left: 28px;
+    width: calc(100% - 53px - 28px);
+}
+
+.mobile-left {
+    padding-left: 20px;
+    position: relative;
+    font-style: normal;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box; 
+}
+
+.map-icon {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    box-sizing: border-box;
+}
+
+.footer-link {
+    color: #454E80;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all .3s linear;
+    text-decoration: none; 
+    background-color: rgba(0,0,0,0);
+}
+
+.footer-job {
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.job-icon {
+    position: absolute;
+    left: -2px;
+    top: 0;
+}
+
+.footer-year {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+
+.footer-language {
+    width: 100%;
+    max-width: 185px;
+    position: relative;
+    padding: 10px;
+}
+
+.footer-languageList {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #0a1551;
+    background-color: #fff;
+    border: 1px solid #d5ddf9;
+    border-radius: 4px;
+    height: auto;
+    padding: 4px 5px 4px 9px;
+    appearance: none;
+    background-image:url("data:image/svg+xml,%3Csvg width='8' height='5' vie….06635Z' fill='%230A1551'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 8px;
+    box-sizing: border-box;
+    text-transform: none;
+    font-family: inherit;
+}
+
+.footer {
+    background-color: #c8ceed;
+    padding: 10px 5px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.footer-bottom {
+    max-width: 1275px;
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: max-width .3s ease;
+}
+
+.bottom-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
